@@ -28,11 +28,34 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 127c08cf5e8fce443a0fc345a1cd728b, type: 3}
-    totalSpriteSurfaceArea: 1022848
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 58dd723046072fa41b7639ec1a04214d: 21300000
+    - 77dc2850dcf2b9d42a5b0a5eb18c235a: 21300000
+    - a2812db308e13b34abdb27cf4efd11b5: 21300000
+    - f92f3e74f0334674388eeabf89411ec3: 21300000
+    - 4884ee856c98f2b4fa852ba2e97dc46e: 21300000
+    - 74097ec51b363cc4d9c0a55cf7398f3a: 21300000
+    - 8eac1e178af57e342ad7b5e33edf63c0: 21300000
+    - e8527f17328097e49b311dd200ad78bb: 21300000
+    - 915cae775728f5e4bb615adc932d0cb0: 21300000
+    - 989e62975774bb34d990f0d919eab463: 21300000
+    - a3e357595eb43d547afeb4d752f00a5f: 21300000
+    - 5f5ef91a7ff783641be206edc6f2a313: 21300000
+    - 72e1083af4e7b114b888e5f1b3beffb7: 21300000
+    - b9faacda8dbfddb4aab575f871ced2a8: 21300000
+    - cec04f5b7d0101b4e967789d83ae5241: 21300000
+    - 52bac56cf8e011c42a183430fec8f35f: 21300000
+    - f24d788c595a5224c856607030eee529: 21300000
+    - b35bfbfc95bfe394295303a6a77a9788: 21300000
+    - 73721fdecafc12a48868e4c16e2c13f9: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 58dd723046072fa41b7639ec1a04214d, type: 3}
@@ -74,5 +97,6 @@ SpriteAtlas:
   - ButtonHalfCircle
   - VibroOnButton
   - WhiteDotFull
+  m_RenderDataMap: {}
   m_Tag: Sprites
   m_IsVariant: 0

@@ -19,6 +19,8 @@ public class Labyrinth : MonoBehaviour
     //public GameObject floor;
     public GameObject roof;
 
+    public bool useFruits;
+    public bool useWater;
     public bool isNeedLoonka;
     public bool isNeedShadows;
     public bool isBoss;

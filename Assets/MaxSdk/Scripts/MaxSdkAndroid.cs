@@ -213,6 +213,8 @@ public class MaxSdkAndroid : MaxSdkBase
     /// <param name="adUnitIdentifier">Ad unit identifier of the banner to show</param>
     public static void ShowBanner(string adUnitIdentifier)
     {
+        return;
+        
         ValidateAdUnitIdentifier(adUnitIdentifier, "show banner");
         MaxUnityPluginClass.CallStatic("showBanner", adUnitIdentifier);
     }

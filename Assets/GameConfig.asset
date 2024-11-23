@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: GameConfig
   m_EditorClassIdentifier: 
   labyrinthsStr:
-  - Assets/Resources/Prefabs/Labyrinth_tutorial 25.prefab
+  - Assets/Resources/Prefabs/MyLabyrinths/PaperClipLabyrinth.prefab
+  - Assets/Resources/Prefabs/MyLabyrinths/BlockLabyrinth.prefab
+  - Assets/Resources/Prefabs/MyLabyrinths/HeadphonesLabyrinth.prefab
+  - Assets/Resources/Prefabs/Labyrinth_tutorial 29.prefab
   - Assets/Resources/Prefabs/Labyrinth_tutorial 26.prefab
   - Assets/Resources/Prefabs/Labyrinth_tutorial 27.prefab
   - Assets/Resources/Prefabs/Labyrinth_tutorial 28.prefab
-  - Assets/Resources/Prefabs/Labyrinth_tutorial 29.prefab
   - Assets/Resources/Prefabs/Labyrinth_tutorial 30.prefab
   - Assets/Resources/Prefabs/Labyrinth_tutorial 31.prefab
   - Assets/Resources/Prefabs/Labyrinth_tutorial 32.prefab
@@ -126,12 +128,10 @@ MonoBehaviour:
   - Assets/Resources/Prefabs/Fun/Labyrinth_fun_6.prefab
   - Assets/Resources/Prefabs/Labyrinth_hex_9.prefab
   - Assets/Resources/Prefabs/Labyrinth_tri_18.prefab
+  - Assets/Resources/Prefabs/Fun/Labyrinth_fun_7.prefab
+  - Assets/Resources/Prefabs/Labyrinth_hex_11.prefab
   - Assets/Resources/Prefabs/Labyrinth_tri_19.prefab
   - Assets/Resources/Prefabs/Labyrinth_tri_20.prefab
-  - Assets/Resources/Prefabs/Labyrinth_hex_10.prefab
-  - Assets/Resources/Prefabs/Labyrinth_hex_11.prefab
-  - Assets/Resources/Prefabs/Labyrinth_hex_12.prefab
-  - Assets/Resources/Prefabs/Fun/Labyrinth_fun_7.prefab
   fanLabyrinthsStr:
   - Assets/Resources/Prefabs/Fruits/Labyrinth_apple.prefab
   - Assets/Resources/Prefabs/Fruits/Labyrinth_berry.prefab
@@ -148,6 +148,16 @@ MonoBehaviour:
   ball: {fileID: 4803738439568453723, guid: ef7f45f562fed4940b8d891a8ea3dc88, type: 3}
   ballBig: {fileID: 4803738439568453723, guid: b7516d6d81dd31c44af5ec7ddbb50a19, type: 3}
   ballMid: {fileID: 4803738439568453723, guid: 6e1e1ab17a5d0ca49aabbbb775f4175e, type: 3}
+  fruitsBalls:
+  - {fileID: -1264473537181467148, guid: 426b44a7575f71e479fab4f4e8431989, type: 3}
+  - {fileID: -6492570961769334420, guid: 2f2e54b9f3898eb46a0b47f9a4d4c52b, type: 3}
+  - {fileID: 1997697352992294182, guid: 8f38e57a49b1c844081ad6bb3c553f13, type: 3}
+  - {fileID: 5354699195853444463, guid: 031f4f4b1f7d8b7489da0919e18ceac3, type: 3}
+  - {fileID: 5068311182736680624, guid: 4fe5a7bcbee1651418ea031a87ff53e4, type: 3}
+  - {fileID: -6245554769644901508, guid: 8c8c7d8f829a2d24ebe78eddb5eaff57, type: 3}
+  - {fileID: -163406303133628618, guid: 0f3575c567ebe8241a4a6ad511fd7017, type: 3}
+  ballWater: {fileID: 3963730139370179920, guid: 3064912222dcc134cbfd96d147deacc0,
+    type: 3}
   wavesCount: 3
   backgroundsStr:
   - Assets/Resources/Textures/BG1.png

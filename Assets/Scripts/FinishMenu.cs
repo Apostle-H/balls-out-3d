@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -24,6 +25,10 @@ public class FinishMenu : MonoBehaviour, ILevelObserver
     public GameObject VideoIcon;
     public GameObject NoThankYouButton;
     public GameObject NonBonus;
+
+    public GameObject LevelsPanel;
+    public GameObject LevelsContainer;
+    public LevelButton levelButtonPrefab;
 
     bool bonus;
 
@@ -65,7 +70,6 @@ public class FinishMenu : MonoBehaviour, ILevelObserver
             VideoIcon.SetActive(bonus);
             //BonusText.gameObject.SetActive(bonus);
             NonBonus.SetActive(!bonus);
-
         });
     }
 
@@ -82,8 +86,6 @@ public class FinishMenu : MonoBehaviour, ILevelObserver
     private void Awake()
     {
         instance = this;
-
-
     }
 
     // Start is called before the first frame update
@@ -91,11 +93,32 @@ public class FinishMenu : MonoBehaviour, ILevelObserver
     {
         transform.localPosition = Vector3.zero;
         gameObject.SetActive(false);
+        LevelsPanel.SetActive(false);
 
         playerState.levelObservers.Add(this);
 
         twentyBalls.SetActive(false);
         newBestText.gameObject.SetActive(false);
+
+        var levelsCount = gameConfig.labyrinthsStr.Length / gameConfig.wavesCount;
+        for (var i = 0; i < levelsCount; i++)
+        {
+            var theme = gameConfig.levelThemeOrder.Length > 0 ? gameConfig.levelThemeOrder[i % gameConfig.levelThemeOrder.Length] : i;
+            
+            var levelButton = Instantiate(levelButtonPrefab.gameObject, LevelsContainer.transform).GetComponent<LevelButton>();
+            levelButton.Image.color = gameConfig.colors[theme];
+            levelButton.Text.text = (i + 1).ToString();
+            levelButton.Text.color = gameConfig.capColors[theme];
+            
+            var level = i;
+            levelButton.Button.onClick.AddListener(() =>
+            {
+                playerState.level = level;
+                playerState.Save();
+                
+                SceneManager.LoadScene(1);
+            });
+        }
     }
 
     private void OnDestroy()

@@ -16,6 +16,9 @@ public class GameConfig : ScriptableObject
     public Ball ball;
     public Ball ballBig;
     public Ball ballMid;
+    
+    public Ball[] fruitsBalls;
+    public Ball ballWater;
 
     public int wavesCount = 3;
 

@@ -519,6 +519,8 @@ public class AdsAnaliticsManager : MonoBehaviour
 
     public void ShowInterstitial(Action<bool> callback)
     {
+        return;
+        
         interstitialCounter++;
         //if (interstitialCounter < 2 || interstitialCounter % 2 == 0) return;
         if (ads == null) return;
@@ -610,6 +612,8 @@ public class AdsAnaliticsManager : MonoBehaviour
 
     public void LoadAds()
     {
+        return;
+        
         if (ads == null) return;
 
         if (!CanShowInterstitial())

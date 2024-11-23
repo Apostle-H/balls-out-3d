@@ -18,6 +18,8 @@ using UnityEngine.iOS;
 
 public class Level : MonoBehaviour, IWaveObserver, ILevelObserver, ICaptureBallObserver, IPurchaseObserver, IRewardedObserver, IConsentObserver, IInterstitialObserver
 {
+    public GameObject fluidsQuad;
+    
     public static Level instance;
     public PlayerState playerState;
     public GameConfig gameConfig;
@@ -386,7 +388,10 @@ public class Level : MonoBehaviour, IWaveObserver, ILevelObserver, ICaptureBallO
                 else if (ballSize < 9) ballSize = 1;
                 else if (ballSize < 10) ballSize = 2;
                 if (count >= max) continue;
-                var ball = Instantiate(ballSize == 2 ? gameConfig.ballBig : ballSize == 1 ? gameConfig.ballMid : gameConfig.ball, newLab.transform);
+                var ball = Instantiate(newLab.useFruits 
+                    ? gameConfig.fruitsBalls[Random.Range(0, gameConfig.fruitsBalls.Length)] 
+                    : newLab.useWater ? gameConfig.ballWater 
+                        : ballSize == 2 ? gameConfig.ballBig : ballSize == 1 ? gameConfig.ballMid : gameConfig.ball, newLab.transform);
                 ball.transform.localPosition = Vector3.right * (j % sq - sq / 2) * 0.1f + Vector3.down * (j / sq - sq / 2) * 0.1f + Vector3.forward * d * 0.1f;
 
                 var scale = RemoteSettings.GetFloat(ballSize == 0 ? "ballSize0" : ballSize == 1 ? "ballSize1" : "ballSize2", 1f);
@@ -538,6 +543,7 @@ public class Level : MonoBehaviour, IWaveObserver, ILevelObserver, ICaptureBallO
             board1.SetActive(false);
             board2.SetActive(false);
             loonka.SetActive(false);
+            fluidsQuad.SetActive(false);
             activeLab++;
             foreach (var ball in balls)
             {
@@ -574,7 +580,8 @@ public class Level : MonoBehaviour, IWaveObserver, ILevelObserver, ICaptureBallO
         })
         .Append(
             labyrinths[al + 1].transform.DORotateQuaternion(Quaternion.Euler(0f, 0f, 0f), 0.8f)
-        ).AppendCallback(() => {
+        )
+        .AppendCallback(() => {
             ActivateLab(activeLab);
             inMove = false;
             board1.SetActive(true);
@@ -585,8 +592,14 @@ public class Level : MonoBehaviour, IWaveObserver, ILevelObserver, ICaptureBallO
             SoundSystem.ballsPitcher = 0;
             //ShowAds();
         });
-        
-        
+
+        sequence.InsertCallback(sequence.Duration() - 0.54f, () =>
+        {
+            if (labyrinths[al + 1].useWater)
+                fluidsQuad.SetActive(true);
+        });
+
+
     }
 
     public void OnLevelComplete()
