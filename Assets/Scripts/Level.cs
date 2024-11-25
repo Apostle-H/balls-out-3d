@@ -391,7 +391,9 @@ public class Level : MonoBehaviour, IWaveObserver, ILevelObserver, ICaptureBallO
                 var ball = Instantiate(newLab.useFruits 
                     ? gameConfig.fruitsBalls[Random.Range(0, gameConfig.fruitsBalls.Length)] 
                     : newLab.useWater ? gameConfig.ballWater 
-                        : ballSize == 2 ? gameConfig.ballBig : ballSize == 1 ? gameConfig.ballMid : gameConfig.ball, newLab.transform);
+                        : newLab.useLava ? gameConfig.ballLava 
+                            : newLab.useOil ? gameConfig.ballOil 
+                                : ballSize == 2 ? gameConfig.ballBig : ballSize == 1 ? gameConfig.ballMid : gameConfig.ball, newLab.transform);
                 ball.transform.localPosition = Vector3.right * (j % sq - sq / 2) * 0.1f + Vector3.down * (j / sq - sq / 2) * 0.1f + Vector3.forward * d * 0.1f;
 
                 var scale = RemoteSettings.GetFloat(ballSize == 0 ? "ballSize0" : ballSize == 1 ? "ballSize1" : "ballSize2", 1f);
@@ -595,7 +597,7 @@ public class Level : MonoBehaviour, IWaveObserver, ILevelObserver, ICaptureBallO
 
         sequence.InsertCallback(sequence.Duration() - 0.54f, () =>
         {
-            if (labyrinths[al + 1].useWater)
+            if (labyrinths[al + 1].useWater || labyrinths[al + 1].useLava || labyrinths[al + 1].useOil)
                 fluidsQuad.SetActive(true);
         });
 

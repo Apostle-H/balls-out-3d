@@ -21,6 +21,8 @@ public class Labyrinth : MonoBehaviour
 
     public bool useFruits;
     public bool useWater;
+    public bool useLava;
+    public bool useOil;
     public bool isNeedLoonka;
     public bool isNeedShadows;
     public bool isBoss;

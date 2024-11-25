@@ -158,6 +158,9 @@ MonoBehaviour:
   - {fileID: -163406303133628618, guid: 0f3575c567ebe8241a4a6ad511fd7017, type: 3}
   ballWater: {fileID: 3963730139370179920, guid: 3064912222dcc134cbfd96d147deacc0,
     type: 3}
+  ballLava: {fileID: 3963730139370179920, guid: d217018f9e9b3ab45b8e2028ffb97a98,
+    type: 3}
+  ballOil: {fileID: 3963730139370179920, guid: f87ac71b0a6c5ad4980d59ebf2333ff4, type: 3}
   wavesCount: 3
   backgroundsStr:
   - Assets/Resources/Textures/BG1.png

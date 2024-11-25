@@ -29,8 +29,10 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _CutRadius: 0
+    - _Power: 0.5
     - _Radius: 0.42
-    m_Colors: []
+    m_Colors:
+    - _Color: {r: 0.14117648, g: 0.8039216, b: 0.8980392, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8893299209785140276
 MonoBehaviour:
